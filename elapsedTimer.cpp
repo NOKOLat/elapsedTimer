@@ -5,7 +5,7 @@
  *      Author: conat
  */
 
-#include "TIMStopWatch.h"
+#include <elapsedTimer/elapsedTimer.h>
 
 void TIM_StopWatch::start(){
 	update();
