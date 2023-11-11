@@ -10,9 +10,9 @@
 
 #include "main.h"
 
-class TIM_StopWatch {
+class ElapsedTimer {
 public:
-	TIM_StopWatch(TIM_HandleTypeDef *htim=nullptr, uint32_t frequence = 1000000)
+	ElapsedTimer(TIM_HandleTypeDef *htim=nullptr, uint32_t frequence = 1000000)
 	:htim(htim),
 	 frequence(frequence)
 	{
