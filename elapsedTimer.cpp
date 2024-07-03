@@ -5,7 +5,7 @@
  *      Author: conat
  */
 
-#include <elapsedTimer/elapsedTimer.h>
+#include "./elapsedTimer.h"
 
 void ElapsedTimer::start(){
 	update();
