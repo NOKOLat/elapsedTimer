@@ -23,6 +23,7 @@ public:
 	void reset();
 	float getTimeMS();
 	void update();
+	bool selfTest();
 
 private:
 	TIM_HandleTypeDef *htim;

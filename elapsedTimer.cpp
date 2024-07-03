@@ -41,3 +41,17 @@ void ElapsedTimer::update(){
 float ElapsedTimer::getTimeMS(){
 	return count / (float)frequence * 1000.0f;
 }
+
+bool ElapsedTimer::selfTest(){
+	const int testDuration = 10;
+	reset();
+	start();
+	HAL_Delay(testDuration);
+
+	if(std::pow(getTimeMS() - testDuration,2)<testDuration*0.001){
+		//acceptable error limit is 0.1% of testDuration
+		return true;
+	}
+	return false;
+
+}
