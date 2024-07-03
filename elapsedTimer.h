@@ -9,6 +9,7 @@
 #define SRC_TIMSTOPWATCH_H_
 
 #include "main.h"
+#include <cmath>
 
 class ElapsedTimer {
 public:
