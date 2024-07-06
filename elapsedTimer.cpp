@@ -48,10 +48,15 @@ bool ElapsedTimer::selfTest(){
 	start();
 	HAL_Delay(testDuration);
 
+	bool res = false;
+
 	if(std::pow(getTimeMS() - testDuration,2)<testDuration*0.001){
 		//acceptable error limit is 0.1% of testDuration
 		return true;
 	}
-	return false;
+
+	reset();
+
+	return res;
 
 }
