@@ -17,6 +17,9 @@ public:
 	:htim(htim),
 	 frequence(frequence)
 	{
+		befCount = 0;
+		count = 0;
+		isStart = false;
 	}
 
 	/*
@@ -57,9 +60,9 @@ public:
 private:
 	TIM_HandleTypeDef *htim;
 	const uint32_t frequence;
-	uint32_t count = 0;
-	uint32_t befCount = 0;
-	bool isStart = false;
+	uint32_t count;
+	uint32_t befCount;
+	bool isStart;
 };
 
 #endif /* SRC_TIMSTOPWATCH_H_ */
