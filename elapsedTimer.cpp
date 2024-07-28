@@ -21,6 +21,7 @@ void ElapsedTimer::stop(){
 void ElapsedTimer::reset(){
 	stop();
 	count = 0;
+	befCount = 0;
 	__HAL_TIM_SET_COUNTER(htim, 0);
 	__HAL_TIM_CLEAR_FLAG(htim, TIM_FLAG_UPDATE);
 }
@@ -39,11 +40,12 @@ void ElapsedTimer::update(){
 }
 
 float ElapsedTimer::getTimeMS(){
+	update();
 	return count / (float)frequence * 1000.0f;
 }
 
 bool ElapsedTimer::selfTest(){
-	const int testDuration = 10;
+	const int testDuration = 1000;
 	reset();
 	start();
 	HAL_Delay(testDuration);
