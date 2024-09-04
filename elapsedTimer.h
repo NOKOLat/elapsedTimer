@@ -44,6 +44,8 @@ public:
 	 */
 	float getTimeMS();
 
+	uint64_t getCount();
+
 	/*
 	 * This function dose not have return value.
 	 * Update internally the number of millisecond elapsed since previous start()
@@ -59,9 +61,9 @@ public:
 
 private:
 	TIM_HandleTypeDef *htim;
-	const uint32_t frequence;
-	uint32_t count;
-	uint32_t befCount;
+	const uint64_t frequence;
+	uint64_t count;
+	uint64_t befCount;
 	bool isStart;
 };
 

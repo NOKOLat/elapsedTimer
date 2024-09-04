@@ -44,6 +44,11 @@ float ElapsedTimer::getTimeMS(){
 	return count / (float)frequence * 1000.0f;
 }
 
+uint64_t ElapsedTimer::getCount(){
+	update();
+	return count;
+}
+
 bool ElapsedTimer::selfTest(){
 	const int testDuration = 1000;
 	reset();
